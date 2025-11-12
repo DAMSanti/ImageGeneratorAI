@@ -11,7 +11,29 @@ __pycache__/
 venv/
 env/
 
+# Modelos de IA - NO SUBIR (muy pesados)
+models/
+loras/
+vaes/
+embeddings/
+controlnets/
+upscalers/
+
+# Imágenes generadas - NO SUBIR
 generated_images/
+*.png
+*.jpg
+*.jpeg
+
+# Metadatos (excepto los de configuración)
+*.json
+!package.json
+!package-lock.json
+!next.config.cjs
+!tsconfig.json
+!postcss.config.cjs
+!tailwind.config.js
+
 .env.local
 .env.*.local
 
