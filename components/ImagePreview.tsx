@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 interface ImagePreviewProps {
   imageUrl: string | null;
 }
@@ -13,11 +11,10 @@ export default function ImagePreview({ imageUrl }: ImagePreviewProps) {
         <div className="w-full space-y-4">
           <h3 className="text-lg font-bold text-white">Vista Previa</h3>
           <div className="relative w-full h-[500px] rounded-lg overflow-hidden bg-white/5 border border-white/10">
-            <Image
+            <img
               src={imageUrl}
               alt="Generated image"
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
           <a

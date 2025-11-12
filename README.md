@@ -281,6 +281,48 @@ Solución: Usar modelo más pequeño, reducir resolution
 Solución: Verificar puerto 8000, python ejecutándose
 ```
 
+## 📂 Gestión de Archivos Grandes
+
+### ⚠️ No Subir a GitHub
+
+El repositorio **NO incluye**:
+- `models/` - Modelos de IA (muy pesados, 2-10GB cada uno)
+- `loras/` - LoRAs (50MB-500MB)
+- `vaes/` - VAEs (100MB-1GB)
+- `embeddings/` - Embeddings (10MB-100MB)
+- `controlnets/` - ControlNets (500MB-2GB)
+- `upscalers/` - Upscalers (50MB-500MB)
+- `generated_images/` - Imágenes generadas (ocupan mucho espacio)
+- Archivos JSON de metadatos (generados automáticamente)
+
+Estos están en `.gitignore` para mantener el repositorio limpio.
+
+### 💾 Descargar Modelos Localmente
+
+Si ya has subido estos archivos a GitHub, limpia el historial:
+
+**Windows (PowerShell):**
+```powershell
+.\cleanup_git.ps1
+git add .gitignore
+git commit -m "Actualizar .gitignore para excluir modelos e imágenes"
+git push
+```
+
+**Linux/Mac (Bash):**
+```bash
+bash cleanup_git.sh
+git add .gitignore
+git commit -m "Actualizar .gitignore para excluir modelos e imágenes"
+git push
+```
+
+Los modelos se descargan localmente:
+```bash
+python download_models.py download --model proteus --type model
+python download_loras_and_embeddings.py
+```
+
 ## 📚 Documentación Completa
 
 Ver archivos:

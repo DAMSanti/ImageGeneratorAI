@@ -11,6 +11,10 @@ __pycache__/
 venv/
 env/
 
+# Cache de Hugging Face
+.huggingface/
+.cache/
+
 # Modelos de IA - NO SUBIR (muy pesados)
 models/
 loras/
